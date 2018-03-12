@@ -23,7 +23,7 @@ var upperCaseWords = function (wordList) {
 
 exports.get_headline = function (req, res) {
   var length = (req.query.length === undefined) ? HEADLINE_LENGTH : req.query.length
-  var headline = headlines.start(upperCaseWords).end(length).process()
+  var headline = getHeadlinePure(length)
 
   console.log('Generated headline: "' + headline + '" with length: ' + length)
 
@@ -44,3 +44,9 @@ exports.add_headline = function (req, res) {
   // send response acknowledging added headline
   res.sendStatus(200)
 }
+
+var getHeadlinePure = function (length) {
+  return headlines.start(upperCaseWords).end(length).process()
+}
+
+exports.get_headline_pure = getHeadlinePure
