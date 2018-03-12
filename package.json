@@ -1,0 +1,13 @@
+{
+  "name": "rab-markov",
+  "version": "1.0.0",
+  "description": "A markov chain generator for Red and Black headlines.",
+  "main": "index.js",
+  "repository": "https://github.com/spyboticsguy/rab-markov.git",
+  "author": "Tristen Allen",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "csv": "^2.0.0"
+  }
+}
