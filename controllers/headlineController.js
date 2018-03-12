@@ -22,7 +22,7 @@ var upperCaseWords = function (wordList) {
 }
 
 exports.get_headline = function (req, res) {
-  var length = (req.params.length === undefined) ? HEADLINE_LENGTH : req.params.length
+  var length = (req.query.length === undefined) ? HEADLINE_LENGTH : req.query.length
   var headline = headlines.start(upperCaseWords).end(length).process()
 
   console.log('Generated headline: "' + headline + '" with length: ' + length)
@@ -33,12 +33,12 @@ exports.get_headline = function (req, res) {
 
 exports.add_headline = function (req, res) {
   // add given headline to markov chain generator
-  headlines.parse(req.params.headline)
+  headlines.parse(req.body.headline)
 
   // update stored headlines
   fs.appendFile(HEADLINE_FILE,
-    req.params.headline + '\n', () => {
-      console.log('Added headline: ' + req.params.headline)
+    req.body.headline + '\n', () => {
+      console.log('Added headline: ' + req.body.headline)
     })
 
   // send response acknowledging added headline
