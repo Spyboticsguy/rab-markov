@@ -7,6 +7,9 @@
   "author": "Tristen Allen",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
     "csv": "^2.0.0",
     "express": "^4.16.3",
