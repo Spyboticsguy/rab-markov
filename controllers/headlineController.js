@@ -25,8 +25,6 @@ exports.get_headline = function (req, res) {
   var length = (req.query.length === undefined) ? HEADLINE_LENGTH : req.query.length
   var headline = getHeadlinePure(length)
 
-  console.log('Generated headline: "' + headline + '" with length: ' + length)
-
   // pass generated headline to response
   res.json(headline)
 }
@@ -46,7 +44,9 @@ exports.add_headline = function (req, res) {
 }
 
 var getHeadlinePure = function (length) {
-  return headlines.start(upperCaseWords).end(length).process()
+  var headline = headlines.start(upperCaseWords).end(length).process()
+  console.log('Generated headline: "' + headline + '" with length: ' + length)
+  return headline
 }
 
 exports.get_headline_pure = getHeadlinePure

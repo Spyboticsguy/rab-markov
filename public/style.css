@@ -1,8 +1,16 @@
-h1.headline {
-    margin: auto;
-}
-
 body {
     display: flex;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    flex-direction: column;
+}
+
+div.headline {
+    margin: auto;
+    padding: 1rem;
+    min-height: 400px;
+}
+
+div.footer {
+    margin: auto;
+    text-align: center;
 }
