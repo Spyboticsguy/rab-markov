@@ -5,12 +5,14 @@ body {
 }
 
 div.headline {
-    margin: auto;
-    padding: 1rem;
     min-height: 400px;
 }
 
 div.footer {
-    margin: auto;
     text-align: center;
+}
+
+div {
+    margin: auto;
+    padding: 1rem;
 }

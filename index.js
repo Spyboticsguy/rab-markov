@@ -21,4 +21,10 @@ app.listen(port)
 // register routes
 routes(app)
 
+// handle 404s
+app.use((req, res, next) => {
+  res.status(404)
+  res.render('404')
+})
+
 console.log('RESTful API server started on: ' + port)
