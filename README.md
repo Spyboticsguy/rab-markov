@@ -6,3 +6,6 @@ Live demo at <https://headlines.tristenallen.com>.
 ![Headline Generator](readme-img/headline-gen.png)
 
 A small node/express project that takes in a list of newspaper headlines and provides markov-chain generated headlines sourced from the initial list.
+
+## Documentation
+This application provides a REST api, with documentation available at <https://headlinesrab.docs.apiary.io/#reference>.
