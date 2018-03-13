@@ -1,0 +1,41 @@
+FORMAT: 1A
+HOST: http://headlines.tristenallen.com
+
+# Headlines
+
+Headlines is an API allowing for the retreival of markov-chain generated headlines.
+Information is seeded from a list of over 3000 headlines from the Red and Black, uGA's student newspaper.
+
+## Headlines Collection [/headlines{?length}]
+
++ Parameters
+    + length: 10 (optional) - The length of headline to be generated (approximate).
+        + Default: `20`
+
+### Generate a Headline [GET]
+
+Retrieves a markov-generated headline from the generator.
+
++ Response 200 (application/json)
+
+        {
+            "headline": "DUI, registers"
+        }
+
+### Add a Seed Headline [POST]
+
+You may add a new headline to the seeding file using this method.
+
++ Request (application/json)
+
+        {
+            "headline": "This is an average student newspaper."
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "headline": "This is an average student newspaper."
+            }
