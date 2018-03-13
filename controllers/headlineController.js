@@ -7,7 +7,11 @@ var path = require('path')
 const HEADLINE_LENGTH = 20
 const HEADLINE_FILE = path.join(__dirname, '../resources/headlines.txt')
 
-var headlines = new MarkovChain(fs.readFileSync(HEADLINE_FILE, 'utf8'))
+var headlines = new MarkovChain(fs.readFileSync(HEADLINE_FILE, 'utf8'),
+  (word) => {
+    word = word.replace(/[.,'"]$/ig, '') // replace ending punctuation
+    return word.replace(/^['"]/ig, '') // replace leading punctuation
+  })
 
 var upperCaseWords = function (wordList) {
   var regex = /^[A-Z].*$/
