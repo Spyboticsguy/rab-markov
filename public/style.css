@@ -4,12 +4,12 @@ body {
     flex-direction: column;
 }
 
-div.headline {
-    min-height: 400px;
-}
 
 div.footer {
     text-align: center;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
 }
 
 div {
