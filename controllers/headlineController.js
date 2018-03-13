@@ -40,7 +40,7 @@ exports.add_headline = function (req, res) {
     })
 
   // send response acknowledging added headline
-  res.sendStatus(200)
+  res.status(200).json(req.body)
 }
 
 var getHeadlinePure = function (length) {
