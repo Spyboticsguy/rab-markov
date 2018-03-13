@@ -26,7 +26,7 @@ exports.get_headline = function (req, res) {
   var headline = getHeadlinePure(length)
 
   // pass generated headline to response
-  res.json(headline)
+  res.json({headline: headline})
 }
 
 exports.add_headline = function (req, res) {
